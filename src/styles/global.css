@@ -109,19 +109,28 @@
 }
 
 @theme {
-  --color-azure: #0078D4;
-  --color-azure-light: #2B9AFF;
-  --color-azure-dark: #005A9E;
-  --color-violet: #7C3AED;
-  --color-violet-light: #A78BFA;
-  --color-violet-dark: #5B21B6;
-  --color-lab-dark: #0A0A0F;
-  --color-lab-darker: #050508;
-  --color-lab-gray: #1A1A2E;
-  --color-lab-gray-light: #2D2D44;
-  --color-lab-gray-lighter: #3D3D5C;
-  --color-lab-text: #E2E8F0;
-  --color-lab-text-muted: #94A3B8;
+  /* ── Brand Colors (STYLE_GUIDE.md) ── */
+  --color-azure: #0b80ff;
+  --color-azure-light: #4da3ff;
+  --color-azure-dark: #0060cc;
+  --color-spring: #0fff6f;
+  --color-spring-light: #66ffaa;
+  --color-spring-dark: #0bcc5a;
+  --color-lime: #dfff00;
+  --color-lime-light: #e8ff4d;
+  --color-lime-dark: #b3cc00;
+  --color-rosa: #ff2d9b;
+  --color-rosa-light: #ff70bd;
+  --color-rosa-dark: #d91a80;
+  /* ── Dark Theme Backgrounds ── */
+  --color-lab-dark: #111116;
+  --color-lab-darker: #0a0a0e;
+  --color-lab-gray: #1e1e24;
+  --color-lab-gray-light: #363640;
+  --color-lab-gray-lighter: #4a4a56;
+  --color-lab-text: #F1F5F9;
+  --color-lab-text-muted: #9CA3B4;
+  /* ── Typography ── */
   --font-family-sans: 'Aeonik', system-ui, -apple-system, sans-serif;
   --font-family-strokey: 'Strokey', cursive;
 }
@@ -164,11 +173,11 @@ body {
 
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3), 0 0 40px rgba(0, 120, 212, 0.1);
+    box-shadow: 0 0 20px rgba(15, 255, 111, 0.25), 0 0 40px rgba(255, 45, 155, 0.15);
   }
 
   50% {
-    box-shadow: 0 0 30px rgba(124, 58, 237, 0.5), 0 0 60px rgba(0, 120, 212, 0.2);
+    box-shadow: 0 0 30px rgba(15, 255, 111, 0.4), 0 0 60px rgba(255, 45, 155, 0.25);
   }
 }
 
@@ -211,7 +220,7 @@ body {
 }
 
 .animate-shimmer {
-  background: linear-gradient(110deg, var(--color-violet) 0%, var(--color-azure-light) 45%, var(--color-violet-light) 55%, var(--color-violet) 100%);
+  background: linear-gradient(110deg, var(--color-spring) 0%, var(--color-azure) 40%, var(--color-rosa) 60%, var(--color-spring) 100%);
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
 }
@@ -251,15 +260,15 @@ body {
 }
 
 .glass {
-  background: rgba(26, 26, 46, 0.6);
+  background: rgba(30, 30, 36, 0.6);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .grid-bg {
   background-image:
-    linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(15, 255, 111, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 255, 111, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 

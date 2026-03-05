@@ -13,7 +13,7 @@ const team = [
     description: 'Arquitecto cloud especializado en Azure. Lidera la estrategia técnica y el diseño de soluciones escalables en la nube.',
     linkedInUrl: 'https://linkedin.com/in/kevin',
     initials: 'KP',
-    gradient: 'bg-gradient-to-br from-azure to-violet',
+    gradient: 'bg-gradient-to-br from-azure to-spring',
   },
   {
     name: 'Santiago',
@@ -21,7 +21,7 @@ const team = [
     description: 'Ingeniero de infraestructura cloud con pasión por la automatización, IaC y pipelines CI/CD robustos.',
     linkedInUrl: 'https://linkedin.com/in/santiago',
     initials: 'SM',
-    gradient: 'bg-gradient-to-br from-violet to-violet-light',
+    gradient: 'bg-gradient-to-br from-spring to-spring-light',
   },
   {
     name: 'Ignacio',
@@ -29,7 +29,7 @@ const team = [
     description: 'Especialista en cultura DevOps, observabilidad y optimización de flujos de desarrollo para equipos de alto rendimiento.',
     linkedInUrl: 'https://linkedin.com/in/ignacio',
     initials: 'IG',
-    gradient: 'bg-gradient-to-br from-azure-light to-azure',
+    gradient: 'bg-gradient-to-br from-rosa to-azure',
   },
 ];
 ---
@@ -39,22 +39,20 @@ const team = [
   <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-white/80 dark:bg-lab-dark/80 backdrop-blur-md border-b border-gray-200/50 dark:border-lab-gray-light/30 transition-colors duration-300">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <a href="#hero" class="flex items-center gap-2 group">
-        <span class="text-xl font-bold tracking-tight">
-          <span class="text-violet dark:text-violet-light">Ready</span><span class="text-azure dark:text-azure-light">Labs</span>
-        </span>
-        <span class="w-2 h-2 rounded-full bg-violet animate-pulse"></span>
+        <img src="/images/icon-readylabs.png" alt="ReadyLabs" class="h-8 w-auto dark:hidden" />
+        <img src="/images/icon-dark-readylabs.png" alt="ReadyLabs" class="h-8 w-auto hidden dark:block" />
       </a>
       <div class="flex items-center gap-6">
         <div class="hidden sm:flex items-center gap-6 text-sm text-gray-600 dark:text-lab-text-muted">
-          <a href="#manifesto" class="hover:text-violet dark:hover:text-violet-light transition-colors">Manifiesto</a>
-          <a href="#roadmap" class="hover:text-violet dark:hover:text-violet-light transition-colors">Road Map</a>
-          <a href="#team" class="hover:text-violet dark:hover:text-violet-light transition-colors">Equipo</a>
-          <a href="#webinar" class="hover:text-violet dark:hover:text-violet-light transition-colors">Webinar</a>
+          <a href="#manifesto" class="hover:text-spring dark:hover:text-spring-light transition-colors">Manifiesto</a>
+          <a href="#roadmap" class="hover:text-spring dark:hover:text-spring-light transition-colors">Road Map</a>
+          <a href="#team" class="hover:text-spring dark:hover:text-spring-light transition-colors">Equipo</a>
+          <a href="#webinar" class="hover:text-spring dark:hover:text-spring-light transition-colors">Webinar</a>
         </div>
         <!-- Theme Toggle Button -->
         <button
           onclick="toggleTheme()"
-          class="p-2 rounded-xl bg-gray-100 dark:bg-lab-gray-light hover:bg-gray-200 dark:hover:bg-lab-gray-lighter text-gray-600 dark:text-lab-text-muted hover:text-violet dark:hover:text-violet-light transition-all duration-300 cursor-pointer"
+          class="p-2 rounded-xl bg-gray-100 dark:bg-lab-gray-light hover:bg-gray-200 dark:hover:bg-lab-gray-lighter text-gray-600 dark:text-lab-text-muted hover:text-spring dark:hover:text-spring-light transition-all duration-300 cursor-pointer"
           aria-label="Cambiar tema"
         >
           <!-- Moon icon (shown in light mode) -->
@@ -87,9 +85,9 @@ const team = [
   <section id="team" class="relative py-24 sm:py-32 px-6 bg-white dark:bg-lab-dark transition-colors duration-300">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 sm:mb-20">
-        <span class="inline-block text-sm font-semibold text-violet dark:text-violet tracking-widest uppercase mb-4">El Equipo</span>
+        <span class="inline-block text-sm font-semibold text-spring dark:text-spring tracking-widest uppercase mb-4">El Equipo</span>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gray-900 dark:text-lab-text">
-          Los <span class="bg-gradient-to-r from-violet to-azure-light bg-clip-text text-transparent">Arquitectos</span>
+          Los <span class="bg-gradient-to-r from-spring to-azure-light bg-clip-text text-transparent">Arquitectos</span>
         </h2>
         <p class="text-gray-500 dark:text-lab-text-muted text-lg max-w-2xl mx-auto">
           Las mentes detrás de ReadyLabs, comprometidas con construir una comunidad técnica de valor.
@@ -110,9 +108,8 @@ const team = [
   <footer class="py-12 px-6 border-t border-gray-200 dark:border-lab-gray-light/30 bg-gray-50 dark:bg-lab-darker transition-colors duration-300">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
-        <span class="text-lg font-bold tracking-tight">
-          <span class="text-violet dark:text-violet-light">Ready</span><span class="text-azure dark:text-azure-light">Labs</span>
-        </span>
+        <img src="/images/icon-readylabs.png" alt="ReadyLabs" class="h-6 w-auto dark:hidden" />
+        <img src="/images/icon-dark-readylabs.png" alt="ReadyLabs" class="h-6 w-auto hidden dark:block" />
         <span class="text-gray-500 dark:text-lab-text-muted text-sm">by Readymind</span>
       </div>
       <p class="text-sm text-gray-500 dark:text-lab-text-muted">

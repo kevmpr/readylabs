@@ -24,9 +24,9 @@ const pillars = [
   <div class="max-w-6xl mx-auto">
     <!-- Section header -->
     <div class="text-center mb-16 sm:mb-20">
-      <span class="inline-block text-sm font-semibold text-violet tracking-widest uppercase mb-4">Nuestro Manifiesto</span>
+      <span class="inline-block text-sm font-semibold text-spring tracking-widest uppercase mb-4">Nuestro Manifiesto</span>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gray-900 dark:text-lab-text">
-        Lo que nos <span class="bg-gradient-to-r from-violet to-azure-light bg-clip-text text-transparent">define</span>
+        Lo que nos <span class="bg-gradient-to-r from-spring to-azure-light bg-clip-text text-transparent">define</span>
       </h2>
       <p class="text-gray-500 dark:text-lab-text-muted text-lg max-w-2xl mx-auto">
         Tres principios que guían todo lo que hacemos en ReadyLabs.
@@ -40,18 +40,18 @@ const pillars = [
           class:list={[
             'group relative p-8 rounded-2xl transition-all duration-500 hover:-translate-y-2',
             'bg-gray-50 dark:bg-lab-gray/60 border border-gray-200 dark:border-white/8 backdrop-blur-md',
-            'hover:border-violet/30 dark:hover:border-violet/30',
+            'hover:border-spring/30 dark:hover:border-spring/30',
             `animate-fade-in-up animation-delay-${(i + 1) * 200}`
           ]}
         >
           <!-- Number badge -->
           <div class="flex items-center gap-3 mb-6">
             <span class="text-4xl">{pillar.icon}</span>
-            <span class="text-xs font-bold text-violet tracking-widest">{pillar.number}</span>
+            <span class="text-xs font-bold text-spring tracking-widest">{pillar.number}</span>
           </div>
 
           <!-- Content -->
-          <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-lab-text group-hover:text-violet dark:group-hover:text-violet-light transition-colors">
+          <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-lab-text group-hover:text-spring dark:group-hover:text-spring-light transition-colors">
             {pillar.title}
           </h3>
           <p class="text-gray-500 dark:text-lab-text-muted leading-relaxed text-[15px]">
@@ -59,7 +59,7 @@ const pillars = [
           </p>
 
           <!-- Hover glow -->
-          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet/5 to-azure/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-spring/5 to-azure/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
         </div>
       ))}
     </div>

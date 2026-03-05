@@ -10,13 +10,13 @@ const sortedPosts = allPosts.sort(
 );
 ---
 
-<section id="roadmap" class="relative py-24 sm:py-32 px-6 bg-gray-50 dark:bg-lab-dark transition-colors duration-300" style="background-image: linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px); background-size: 60px 60px;">
+<section id="roadmap" class="relative py-24 sm:py-32 px-6 bg-gray-50 dark:bg-lab-dark transition-colors duration-300" style="background-image: linear-gradient(rgba(15, 255, 111, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 255, 111, 0.03) 1px, transparent 1px); background-size: 60px 60px;">
   <div class="max-w-6xl mx-auto">
     <!-- Section header -->
     <div class="text-center mb-16 sm:mb-20">
       <span class="inline-block text-sm font-semibold text-azure dark:text-azure-light tracking-widest uppercase mb-4">Road Map de Contenidos</span>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gray-900 dark:text-lab-text">
-        Mapa de <span class="bg-gradient-to-r from-azure to-violet-light bg-clip-text text-transparent">Niveles</span>
+        Mapa de <span class="text-azure dark:text-azure-light">Niveles</span>
       </h2>
       <p class="text-gray-500 dark:text-lab-text-muted text-lg max-w-2xl mx-auto">
         Avanzá de nivel desbloqueando contenido cada semana. Educación y storytelling en el camino.
@@ -26,10 +26,10 @@ const sortedPosts = allPosts.sort(
     <!-- Timeline -->
     <div class="relative">
       <!-- Vertical line (mobile) -->
-      <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-violet via-azure to-violet/20 lg:hidden"></div>
+      <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-spring via-azure to-spring/20 lg:hidden"></div>
 
       <!-- Horizontal line (desktop) -->
-      <div class="hidden lg:block absolute top-6 left-0 right-0 h-0.5 bg-gradient-to-r from-violet via-azure to-violet/20"></div>
+      <div class="hidden lg:block absolute top-6 left-0 right-0 h-0.5 bg-gradient-to-r from-spring via-azure to-spring/20"></div>
 
       <!-- Cards grid -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
@@ -40,13 +40,13 @@ const sortedPosts = allPosts.sort(
               <!-- Node dot - mobile -->
               <div class:list={[
                 'absolute left-4 top-6 w-4 h-4 rounded-full border-2 lg:hidden',
-                isLocked ? 'border-gray-300 dark:border-lab-gray-lighter bg-gray-100 dark:bg-lab-gray' : 'border-violet bg-violet'
+                isLocked ? 'border-gray-300 dark:border-lab-gray-lighter bg-gray-100 dark:bg-lab-gray' : 'border-spring bg-spring'
               ]}></div>
 
               <!-- Node dot - desktop -->
               <div class:list={[
                 'hidden lg:block absolute left-1/2 top-4 -translate-x-1/2 w-4 h-4 rounded-full border-2',
-                isLocked ? 'border-gray-300 dark:border-lab-gray-lighter bg-gray-100 dark:bg-lab-gray' : 'border-violet bg-violet'
+                isLocked ? 'border-gray-300 dark:border-lab-gray-lighter bg-gray-100 dark:bg-lab-gray' : 'border-spring bg-spring'
               ]}></div>
 
               <ArticleCard

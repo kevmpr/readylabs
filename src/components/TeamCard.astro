@@ -11,7 +11,7 @@ interface Props {
 const { name, role, description, linkedInUrl, initials, gradient } = Astro.props;
 ---
 
-<div class="group relative p-6 rounded-2xl bg-gray-50 dark:bg-lab-gray/60 border border-gray-200 dark:border-white/8 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-violet/30 dark:hover:border-violet/30">
+<div class="group relative p-6 rounded-2xl bg-gray-50 dark:bg-lab-gray/60 border border-gray-200 dark:border-white/8 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-spring/30 dark:hover:border-spring/30">
   <div class="flex flex-col items-center text-center">
     <!-- Avatar -->
     <div class:list={[
@@ -22,7 +22,7 @@ const { name, role, description, linkedInUrl, initials, gradient } = Astro.props
     </div>
 
     <!-- Info -->
-    <h3 class="text-lg font-bold mb-1 text-gray-900 dark:text-lab-text group-hover:text-violet dark:group-hover:text-violet-light transition-colors">{name}</h3>
+    <h3 class="text-lg font-bold mb-1 text-gray-900 dark:text-lab-text group-hover:text-spring dark:group-hover:text-spring-light transition-colors">{name}</h3>
     <span class="text-sm font-medium text-azure dark:text-azure-light mb-3">{role}</span>
     <p class="text-sm text-gray-500 dark:text-lab-text-muted leading-relaxed mb-5">{description}</p>
 
@@ -43,5 +43,5 @@ const { name, role, description, linkedInUrl, initials, gradient } = Astro.props
   </div>
 
   <!-- Hover glow -->
-  <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet/5 to-azure/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+  <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-spring/5 to-azure/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 </div>
