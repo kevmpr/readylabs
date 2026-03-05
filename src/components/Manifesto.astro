@@ -1,0 +1,67 @@
+---
+const pillars = [
+  {
+    number: '01',
+    title: 'Curiosidad sobre certeza',
+    description: 'No buscamos respuestas definitivas. Buscamos las preguntas que nadie se atreve a hacer. La certeza es el final del camino; la curiosidad, el motor.',
+    icon: '🔍',
+  },
+  {
+    number: '02',
+    title: 'Intercambio sobre monólogo',
+    description: 'El conocimiento no crece en silos. Creemos en conversaciones reales, en el choque de ideas y en construir juntos lo que ninguno podría solo.',
+    icon: '🤝',
+  },
+  {
+    number: '03',
+    title: 'Hacer las preguntas correctas',
+    description: 'La tecnología avanza rápido, pero las buenas preguntas trascienden las herramientas. Formular la pregunta correcta es la habilidad más valiosa.',
+    icon: '💡',
+  },
+];
+---
+<section id="manifesto" class="relative py-24 sm:py-32 px-6 bg-white dark:bg-lab-dark transition-colors duration-300">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section header -->
+    <div class="text-center mb-16 sm:mb-20">
+      <span class="inline-block text-sm font-semibold text-violet tracking-widest uppercase mb-4">Nuestro Manifiesto</span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gray-900 dark:text-lab-text">
+        Lo que nos <span class="bg-gradient-to-r from-violet to-azure-light bg-clip-text text-transparent">define</span>
+      </h2>
+      <p class="text-gray-500 dark:text-lab-text-muted text-lg max-w-2xl mx-auto">
+        Tres principios que guían todo lo que hacemos en ReadyLabs.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {pillars.map((pillar, i) => (
+        <div
+          class:list={[
+            'group relative p-8 rounded-2xl transition-all duration-500 hover:-translate-y-2',
+            'bg-gray-50 dark:bg-lab-gray/60 border border-gray-200 dark:border-white/8 backdrop-blur-md',
+            'hover:border-violet/30 dark:hover:border-violet/30',
+            `animate-fade-in-up animation-delay-${(i + 1) * 200}`
+          ]}
+        >
+          <!-- Number badge -->
+          <div class="flex items-center gap-3 mb-6">
+            <span class="text-4xl">{pillar.icon}</span>
+            <span class="text-xs font-bold text-violet tracking-widest">{pillar.number}</span>
+          </div>
+
+          <!-- Content -->
+          <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-lab-text group-hover:text-violet dark:group-hover:text-violet-light transition-colors">
+            {pillar.title}
+          </h3>
+          <p class="text-gray-500 dark:text-lab-text-muted leading-relaxed text-[15px]">
+            {pillar.description}
+          </p>
+
+          <!-- Hover glow -->
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet/5 to-azure/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
