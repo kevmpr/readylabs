@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# LLM context (large file, not needed in deploy)
+llms.txt
+
+# Vercel
+.vercel/
