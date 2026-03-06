@@ -137,15 +137,15 @@
   --color-lab-text: #F1F5F9;
   --color-lab-text-muted: #9CA3B4;
   /* ── Typography ── */
-  --font-family-sans: 'Aeonik', system-ui, -apple-system, sans-serif;
-  --font-family-strokey: 'Strokey', cursive;
+  --font-sans: 'Aeonik', system-ui, -apple-system, sans-serif;
+  --font-strokey: 'Strokey', cursive;
 }
 
 html {
   scroll-behavior: smooth;
   background-color: var(--color-lab-dark);
   color: var(--color-lab-text);
-  font-family: var(--font-family-sans);
+  font-family: var(--font-sans);
 }
 
 body {
