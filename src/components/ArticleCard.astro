@@ -1,4 +1,10 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import imgKevin from '../assets/images/imgProfileKevinPalma.png';
+import imgSantiago from '../assets/images/imgProfileSantiagoDaRos.png';
+import imgIgnacio from '../assets/images/imgProfileIgnacioMiste.png';
+
 interface Props {
   title: string;
   description: string;
@@ -26,10 +32,10 @@ const themeEmoji: Record<string, string> = {
 const emoji = themeEmoji[theme] || '📄';
 
 // Author profile photos
-const authorPhotos: Record<string, string> = {
-  'Kevin': '/images/imgProfileKevinPalma.png',
-  'Santiago': '/images/imgProfileSantiagoDaRos.png',
-  'Ignacio': '/images/imgProfileIgnacioMiste.png',
+const authorPhotos: Record<string, ImageMetadata> = {
+  'Kevin': imgKevin,
+  'Santiago': imgSantiago,
+  'Ignacio': imgIgnacio,
 };
 const authorPhoto = authorPhotos[author];
 
@@ -112,9 +118,11 @@ const colors = authorColors[author] || authorColors['Kevin'];
     <div class="flex items-center justify-between text-xs text-gray-400 dark:text-lab-text-muted pt-4 border-t border-gray-100 dark:border-lab-gray-light/20">
       <span class="flex items-center gap-2">
         {authorPhoto ? (
-          <img
+          <Image
             src={authorPhoto}
             alt={author}
+            width={48}
+            height={48}
             class:list={[
               'w-6 h-6 rounded-full object-cover ring-1',
               isLocked ? 'ring-gray-300 dark:ring-lab-gray-lighter' : colors.ring

@@ -1,10 +1,13 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
 interface Props {
   name: string;
   role: string;
   description: string;
   linkedInUrl: string;
-  image: string;
+  image: ImageMetadata;
   gradient: string;
   glowColor: string;
 }
@@ -25,9 +28,11 @@ const { name, role, description, linkedInUrl, image, gradient, glowColor } = Ast
         gradient
       ]}></div>
       <!-- Circular photo -->
-      <img
+      <Image
         src={image}
         alt={name}
+        width={300}
+        height={300}
         class="relative w-32 h-32 rounded-full object-cover border-2 border-white/20 dark:border-white/10 transition-transform duration-300 group-hover:scale-105"
       />
     </div>

@@ -6,13 +6,22 @@ import LevelMap from '../components/LevelMap.astro';
 import TeamCard from '../components/TeamCard.astro';
 import Webinar from '../components/Webinar.astro';
 
+import { Image } from 'astro:assets';
+import imgKevin from '../assets/images/imgProfileKevinPalma.png';
+import imgSantiago from '../assets/images/imgProfileSantiagoDaRos.png';
+import imgIgnacio from '../assets/images/imgProfileIgnacioMiste.png';
+import iconReadyLabs from '../assets/images/icon-readylabs.png';
+import iconDarkReadyLabs from '../assets/images/icon-dark-readylabs.png';
+import iconReadyMind from '../assets/images/icon-readymind.png';
+import iconDarkReadyMind from '../assets/images/icon-dark-readymind.png';
+
 const team = [
   {
     name: 'Kevin Maximiliano<br/>Palma Romero',
     role: 'Cloud Azure Platform',
     description: 'Se enfoca en el despliegue de infraestructura, networking y gobierno sobre Azure. Realiza análisis de arquitectura, migraciones y movimientos entre suscripciones, integrando la ejecución técnica con la documentación y el análisis.',
     linkedInUrl: 'https://www.linkedin.com/in/kevin-m-palma-r/',
-    image: '/images/imgProfileKevinPalma.png',
+    image: imgKevin,
     gradient: 'bg-gradient-to-br from-azure to-azure-light',
     glowColor: 'var(--color-azure)',
   },
@@ -21,7 +30,7 @@ const team = [
     role: 'Cloud Demand Hub',
     description: 'Se dedica a la operación técnica en entornos de nube, colaborando en la resolución de incidentes y la creación de laboratorios de prueba. Gestiona la instalación de equipos y herramientas de administración remota.',
     linkedInUrl: 'https://www.linkedin.com/in/santiagodaros/',
-    image: '/images/imgProfileSantiagoDaRos.png',
+    image: imgSantiago,
     gradient: 'bg-gradient-to-br from-violet to-violet-light',
     glowColor: 'var(--color-violet)',
   },
@@ -30,7 +39,7 @@ const team = [
     role: 'Cloud Azure Platform',
     description: 'Se encarga de la estandarización y optimización de servicios en Azure y Microsoft 365, implementando políticas de gobierno y modelos de etiquetado. Desarrolla tableros de monitoreo y visibilidad de costos.',
     linkedInUrl: 'https://www.linkedin.com/in/ignacio-miste/',
-    image: '/images/imgProfileIgnacioMiste.png',
+    image: imgIgnacio,
     gradient: 'bg-gradient-to-br from-orange to-orange-light',
     glowColor: 'var(--color-orange)',
   },
@@ -42,8 +51,8 @@ const team = [
   <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-white/80 dark:bg-lab-dark/80 backdrop-blur-md border-b border-gray-200/50 dark:border-lab-gray-light/30 transition-colors duration-300">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <a href="#hero" class="flex items-center gap-2 group">
-        <img src="/images/icon-readylabs.png" alt="ReadyLabs" class="h-8 w-auto dark:hidden" />
-        <img src="/images/icon-dark-readylabs.png" alt="ReadyLabs" class="h-8 w-auto hidden dark:block" />
+        <Image src={iconReadyLabs} alt="ReadyLabs" class="h-8 w-auto dark:hidden" />
+        <Image src={iconDarkReadyLabs} alt="ReadyLabs" class="h-8 w-auto hidden dark:block" />
       </a>
       <div class="flex items-center gap-6">
         <div class="hidden sm:flex items-center gap-6 text-sm text-gray-600 dark:text-lab-text-muted">
@@ -111,12 +120,12 @@ const team = [
   <footer class="py-12 px-6 border-t border-gray-200 dark:border-lab-gray-light/30 bg-gray-50 dark:bg-lab-darker transition-colors duration-300">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
-        <img src="/images/icon-readylabs.png" alt="ReadyLabs" class="h-6 w-auto dark:hidden" />
-        <img src="/images/icon-dark-readylabs.png" alt="ReadyLabs" class="h-6 w-auto hidden dark:block" />
+        <Image src={iconReadyLabs} alt="ReadyLabs" class="h-6 w-auto dark:hidden" />
+        <Image src={iconDarkReadyLabs} alt="ReadyLabs" class="h-6 w-auto hidden dark:block" />
         <span class="text-gray-400 dark:text-lab-text-muted text-sm">by</span>
         <a href="https://readymind.ms/ar/" target="_blank" rel="noopener noreferrer" class="transition-transform hover:scale-105">
-          <img src="/images/icon-readymind.png" alt="Readymind" class="h-5 w-auto dark:hidden" />
-          <img src="/images/icon-dark-readymind.png" alt="Readymind" class="h-5 w-auto hidden dark:block" />
+          <Image src={iconReadyMind} alt="Readymind" class="h-5 w-auto dark:hidden" />
+          <Image src={iconDarkReadyMind} alt="Readymind" class="h-5 w-auto hidden dark:block" />
         </a>
       </div>
       <p class="text-sm text-gray-500 dark:text-lab-text-muted">
