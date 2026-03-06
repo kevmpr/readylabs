@@ -29,3 +29,4 @@ llms.txt
 # Vercel
 .vercel/
 llms.txt
+astro-docs.llms.txt
