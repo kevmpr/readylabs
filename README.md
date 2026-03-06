@@ -1,43 +1,63 @@
-# Astro Starter Kit: Minimal
+# ReadyLabs Landing Page
 
-```sh
-npm create astro@latest -- --template minimal
-```
+ReadyLabs es un hub de contenidos técnicos para mentes inquietas, creado por **Readymind**. Esta landing page está diseñada para presentar la iniciativa, el manifiesto, los artículos semanales, el equipo de arquitectos y próximos eventos interactivos (webinars).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Características Principales
 
-## 🚀 Project Structure
+- **Astro**: Framework web ultrarrápido para sitios impulsados por contenido.
+- **Tailwind CSS**: Framework de utilidades CSS, configurado mediante el plugin de Vite para Astro.
+- **Theming (Dark/Light Mode)**: Soporte completo e integrado para modo claro y oscuro, con persistencia local y soporte para cambio desde la barra de navegación.
+- **Animaciones y Efectos Visuales**:
+  - Animaciones de *scroll reveal* (Intersection Observer) para que las secciones aparezcan fluidamente.
+  - Diseños *glassmorphism*, brillos pulsantes, gradientes animados y orbes de fondo.
+  - Menú de navegación fijo con *backdrop-blur*.
+  - Desplazamiento suave (smooth scrolling) para enlaces internos.
+- **Gestión de Contenidos**:
+  - Utiliza colecciones de contenido de Astro (`src/content/`) para renderizar dinámicamente el *roadmap* de artículos.
+- **Webinar interactivo**:
+  - Temporizador (cuenta regresiva) animado y links directos a Teams y YouTube.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📁 Estructura del Proyecto
 
 ```text
 /
-├── public/
+├── public/                 # Archivos estáticos como fuentes (.otf) y favicons
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── assets/images/      # Imágenes y recursos estáticos importados directamente (logos, perfiles)
+│   ├── components/         # Componentes UI de Astro (Hero.astro, Manifesto.astro, etc.)
+│   ├── content/            # Colecciones de contenido (Markdown/MDX para artículos)
+│   ├── layouts/            # Layout principal (Layout.astro) - Define la estructura HTML base y SEO
+│   ├── pages/              # Rutas de la aplicación (index.astro as the landing page)
+│   └── styles/             # Estilos globales (global.css) - Define fuentes, colores CSS y keyframes
+├── astro.config.mjs        # Configuración de integraciones de Astro (Tailwind, React)
+├── package.json            # Dependencias del proyecto
+└── tsconfig.json           # Configuración de TypeScript
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🛠️ Requisitos Previos
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- [Node.js](https://nodejs.org/) (versión 18+ recomendada)
+- Un manejador de paquetes de Node (`npm`, `yarn`, o `pnpm`)
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🧞 Comenzando (Comandos y Scripts)
 
-## 🧞 Commands
+Abre una terminal en la raíz del proyecto y ejecuta los siguientes comandos:
 
-All commands are run from the root of the project, from a terminal:
+| Comando                   | Acción                                                          |
+| :------------------------ | :-------------------------------------------------------------- |
+| `npm install`             | Instala todas las dependencias necesarias.                      |
+| `npm run dev`             | Inicia el servidor de desarrollo local (usualmente `localhost:4321`). |
+| `npm run build`           | Genera el sitio preparado y optimizado para producción en `./dist/`. |
+| `npm run preview`         | Sirve localmente los archivos compilados generados en la carpeta `dist`. |
+| `npm run astro`           | Ejecutable de la CLI de Astro para tareas adicionales.          |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🎨 Diseño y Marca
 
-## 👀 Want to learn more?
+El sitio respeta firmemente la identidad visual de **ReadyLabs**:
+- **Paleta de colores**: Tonos oscuros para los fondos principales (Lab Dark) combinados con acentos vibrantes de Neón (Azure, Spring Green, Rosa Lacerante, Lime Yellow). Adaptación de estos tonos para la versión de "Modo Claro" con contrastes optimizados.
+- **Tipografías**: 
+  - Primaria: **Aeonik** (moderna y limpia).
+  - Secundaria/Acento: **Strokey** (para textos destacados en gradiente).
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+*Curiosidad sobre certeza. 2026 Readymind.*
