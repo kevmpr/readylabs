@@ -4,25 +4,36 @@ interface Props {
   role: string;
   description: string;
   linkedInUrl: string;
-  initials: string;
+  image: string;
   gradient: string;
+  glowColor: string;
 }
 
-const { name, role, description, linkedInUrl, initials, gradient } = Astro.props;
+const { name, role, description, linkedInUrl, image, gradient, glowColor } = Astro.props;
 ---
 
-<div class="group relative p-6 rounded-2xl bg-gray-50 dark:bg-lab-gray/60 border border-gray-200 dark:border-white/8 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-spring/30 dark:hover:border-spring/30">
+<div
+  class="team-card group relative p-6 rounded-2xl bg-gray-50 dark:bg-lab-gray/60 border border-gray-200 dark:border-white/8 backdrop-blur-md transition-all duration-500 hover:-translate-y-2"
+  style={`--glow: ${glowColor};`}
+>
   <div class="flex flex-col items-center text-center">
-    <!-- Avatar -->
-    <div class:list={[
-      'w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-bold text-white mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3',
-      gradient
-    ]}>
-      {initials}
+    <!-- Avatar with glow -->
+    <div class="relative mb-5">
+      <!-- Subtle glow behind the image -->
+      <div class:list={[
+        'absolute -inset-1 rounded-full opacity-30 blur-sm transition-all duration-500 group-hover:opacity-60 group-hover:blur-md',
+        gradient
+      ]}></div>
+      <!-- Circular photo -->
+      <img
+        src={image}
+        alt={name}
+        class="relative w-32 h-32 rounded-full object-cover border-2 border-white/20 dark:border-white/10 transition-transform duration-300 group-hover:scale-105"
+      />
     </div>
 
     <!-- Info -->
-    <h3 class="text-lg font-bold mb-1 text-gray-900 dark:text-lab-text group-hover:text-spring dark:group-hover:text-spring-light transition-colors">{name}</h3>
+    <h3 class="team-card-name text-lg font-bold mb-1 text-gray-900 dark:text-lab-text transition-colors">{name}</h3>
     <span class="text-sm font-medium text-azure dark:text-azure-light mb-3">{role}</span>
     <p class="text-sm text-gray-500 dark:text-lab-text-muted leading-relaxed mb-5">{description}</p>
 
@@ -42,6 +53,18 @@ const { name, role, description, linkedInUrl, initials, gradient } = Astro.props
     </a>
   </div>
 
-  <!-- Hover glow -->
-  <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-spring/5 to-azure/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+  <!-- Hover glow overlay -->
+  <div class="team-card-glow absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 </div>
+
+<style>
+  .team-card:hover {
+    border-color: color-mix(in srgb, var(--glow) 40%, transparent);
+  }
+  .team-card:hover .team-card-name {
+    color: var(--glow);
+  }
+  .team-card-glow {
+    background: radial-gradient(ellipse at center, color-mix(in srgb, var(--glow) 8%, transparent), transparent 70%);
+  }
+</style>
