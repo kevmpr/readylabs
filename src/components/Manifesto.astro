@@ -5,25 +5,37 @@ const pillars = [
     title: 'Curiosidad sobre certeza',
     description: 'No buscamos respuestas definitivas. Buscamos las preguntas que nadie se atreve a hacer. La certeza es el final del camino; la curiosidad, el motor.',
     icon: '🔍',
+    gradient: 'from-spring/20 to-spring/5',
+    borderHover: 'hover:border-spring/40 dark:hover:border-spring/30 hover:shadow-spring/10',
+    titleHover: 'group-hover:text-spring dark:group-hover:text-spring-light',
+    numberColor: 'text-spring',
   },
   {
     number: '02',
     title: 'Intercambio sobre monólogo',
     description: 'El conocimiento no crece en silos. Creemos en conversaciones reales, en el choque de ideas y en construir juntos lo que ninguno podría solo.',
     icon: '🤝',
+    gradient: 'from-azure/20 to-azure/5',
+    borderHover: 'hover:border-azure/40 dark:hover:border-azure/30 hover:shadow-azure/10',
+    titleHover: 'group-hover:text-azure dark:group-hover:text-azure-light',
+    numberColor: 'text-azure',
   },
   {
     number: '03',
     title: 'Hacer las preguntas correctas',
     description: 'La tecnología avanza rápido, pero las buenas preguntas trascienden las herramientas. Formular la pregunta correcta es la habilidad más valiosa.',
     icon: '💡',
+    gradient: 'from-rosa/20 to-rosa/5',
+    borderHover: 'hover:border-rosa/40 dark:hover:border-rosa/30 hover:shadow-rosa/10',
+    titleHover: 'group-hover:text-rosa dark:group-hover:text-rosa-light',
+    numberColor: 'text-rosa',
   },
 ];
 ---
 <section id="manifesto" class="relative py-24 sm:py-32 px-6 bg-white dark:bg-lab-dark transition-colors duration-300">
   <div class="max-w-6xl mx-auto">
     <!-- Section header -->
-    <div class="text-center mb-16 sm:mb-20">
+    <div class="text-center mb-16 sm:mb-24">
       <span class="inline-block text-sm font-semibold text-spring tracking-widest uppercase mb-4">Nuestro Manifiesto</span>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gray-900 dark:text-lab-text">
         Lo que nos <span class="bg-gradient-to-r from-spring to-azure-light bg-clip-text text-transparent">define</span>
@@ -34,32 +46,53 @@ const pillars = [
     </div>
 
     <!-- Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
       {pillars.map((pillar, i) => (
         <div
           class:list={[
-            'group relative p-8 rounded-2xl transition-all duration-500 hover:-translate-y-2',
-            'bg-gray-50 dark:bg-lab-gray/60 border border-gray-200 dark:border-white/8 backdrop-blur-md',
-            'hover:border-spring/30 dark:hover:border-spring/30',
+            'group relative p-10 rounded-3xl transition-all duration-500 hover:-translate-y-3 overflow-hidden',
+            'bg-gray-50 dark:bg-lab-gray/40 border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-2xl',
+            pillar.borderHover,
             `animate-fade-in-up animation-delay-${(i + 1) * 200}`
           ]}
         >
-          <!-- Number badge -->
-          <div class="flex items-center gap-3 mb-6">
-            <span class="text-4xl">{pillar.icon}</span>
-            <span class="text-xs font-bold text-spring tracking-widest">{pillar.number}</span>
+          <!-- Huge Background Number -->
+          <div class:list={[
+            'absolute -right-4 -bottom-6 text-[160px] leading-none font-black opacity-[0.03] dark:opacity-[0.02]',
+            'group-hover:opacity-10 dark:group-hover:opacity-5 transition-all duration-700 group-hover:scale-110 group-hover:-rotate-6 pointer-events-none select-none',
+            pillar.numberColor
+          ]}>
+            {pillar.number}
+          </div>
+
+          <!-- Icon Header -->
+          <div class="relative z-10 mb-8">
+            <div class:list={[
+              'w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shadow-sm border border-white/50 dark:border-white/10 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3 backdrop-blur-sm',
+              `bg-gradient-to-br ${pillar.gradient}`
+            ]}>
+              {pillar.icon}
+            </div>
           </div>
 
           <!-- Content -->
-          <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-lab-text group-hover:text-spring dark:group-hover:text-spring-light transition-colors">
-            {pillar.title}
-          </h3>
-          <p class="text-gray-500 dark:text-lab-text-muted leading-relaxed text-[15px]">
-            {pillar.description}
-          </p>
+          <div class="relative z-10">
+            <h3 class:list={[
+              'text-2xl font-bold mb-4 text-gray-900 dark:text-lab-text transition-colors duration-300',
+              pillar.titleHover
+            ]}>
+              {pillar.title}
+            </h3>
+            <p class="text-gray-500 dark:text-lab-text-muted leading-relaxed text-[15px] sm:text-base">
+              {pillar.description}
+            </p>
+          </div>
 
-          <!-- Hover glow -->
-          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-spring/5 to-azure/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+          <!-- Subtle inner glow -->
+          <div class:list={[
+            'absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-b',
+            pillar.gradient.replace('/20', '/0').replace('/5', '/5')
+          ]}></div>
         </div>
       ))}
     </div>
