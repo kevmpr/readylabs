@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import ArticleCard from './ArticleCard.astro';
 
-const now = new Date();
+const cutoffDate = new Date('2026-03-09T23:59:59Z');
 const allPosts = await getCollection('blog');
 
 const sortedPosts = allPosts.sort(
@@ -14,12 +14,12 @@ const sortedPosts = allPosts.sort(
   <div class="max-w-6xl mx-auto">
     <!-- Section header -->
     <div class="text-center mb-16 sm:mb-20">
-      <span class="inline-block text-sm font-semibold text-azure dark:text-azure-light tracking-widest uppercase mb-4">Road Map de Contenidos</span>
+      <span class="inline-block text-sm font-semibold text-azure dark:text-azure-light tracking-widest uppercase mb-4">Artículos LinkedIn</span>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gray-900 dark:text-lab-text">
-        Mapa de <span class="text-azure dark:text-azure-light">Niveles</span>
+        Contenido <span class="text-azure dark:text-azure-light">Semanal</span>
       </h2>
       <p class="text-gray-500 dark:text-lab-text-muted text-lg max-w-2xl mx-auto">
-        Avanzá de nivel desbloqueando contenido cada semana. Educación y storytelling en el camino.
+        Cada semana publicamos artículos en LinkedIn sobre temáticas clave del mundo cloud. Desbloquea contenido nuevo cada semana.
       </p>
     </div>
 
@@ -33,10 +33,10 @@ const sortedPosts = allPosts.sort(
 
       <!-- Cards grid -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
-        {sortedPosts.map((post, index) => {
-          const isLocked = new Date(post.data.pubDate) > now;
+        {sortedPosts.map((post) => {
+          const isLocked = new Date(post.data.pubDate) > cutoffDate;
           return (
-            <div class="relative pl-14 lg:pl-0 lg:pt-14">
+            <div class="relative pl-14 lg:pl-0 lg:pt-14 h-full">
               <!-- Node dot - mobile -->
               <div class:list={[
                 'absolute left-4 top-6 w-4 h-4 rounded-full border-2 lg:hidden',
@@ -54,9 +54,9 @@ const sortedPosts = allPosts.sort(
                 description={post.data.description}
                 pubDate={new Date(post.data.pubDate)}
                 author={post.data.author}
-                type={post.data.type}
+                week={post.data.week}
+                theme={post.data.theme}
                 isLocked={isLocked}
-                level={index + 1}
               />
             </div>
           );

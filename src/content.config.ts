@@ -8,7 +8,8 @@ const blog = defineCollection({
     description: z.string(),
     pubDate: z.coerce.date(),
     author: z.string(),
-    type: z.enum(['edu', 'story']),
+    week: z.number(),
+    theme: z.string(),
   }),
 });
 
